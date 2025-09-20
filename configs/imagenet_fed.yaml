@@ -1,0 +1,47 @@
+task: Imagenet
+synthesizer: Pattern
+
+
+batch_size: 64
+test_batch_size: 100
+lr: 0.01
+momentum: 0.9
+decay: 0.0005
+epochs: 50
+poison_epoch: 1
+poison_epoch_stop: 51
+save_on_epochs: [] # [10, 20, 30, 40, 50]
+optimizer: SGD
+log_interval: 100
+
+poisoning_proportion: 0.2
+backdoor_label: 8
+
+resume_model: resume_model/rexnetv1_1.0.pth
+
+save_model: False
+log: True
+report_train_loss: False
+
+transform_train: True
+
+fl: True
+fl_no_models: 20
+fl_local_epochs: 1
+fl_poison_epochs: 10
+fl_total_participants: 20
+fl_eta: 1
+fl_sample_dirichlet: False
+fl_dirichlet_alpha: 0.9
+
+fl_number_of_adversaries: 4
+#fl_number_of_scapegoats: 0
+fl_weight_scale: 2
+fl_adv_group_size: 5
+# fl_single_epoch_attack: 10
+
+attack: ModelReplace
+defense:  LightFed #LightFed
+fl_num_neurons: 100
+noise_mask_alpha: 0 # 0.5
+lagrange_step: 0.1
