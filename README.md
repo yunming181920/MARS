@@ -1,4 +1,7 @@
+## About
 
+This is the official implementation of our NeurIPS paper:  
+**[MARS: A Malignity-Aware Backdoor Defense in Federated Learning](https://arxiv.org/pdf/2509.20383)** 
 
 
 ## Installation
